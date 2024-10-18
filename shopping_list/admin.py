@@ -6,8 +6,5 @@ from shopping_list.models import *
 class ShoppingAdmin(admin.ModelAdmin):
     list_display = ('name', 'id')
     
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'id')
-    
 admin.site.register(Shopping, ShoppingAdmin)
-admin.site.register(Product, ProductAdmin)
+
