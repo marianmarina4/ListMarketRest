@@ -11,33 +11,28 @@ Python 3.x
 Django
 Otros paquetes según requirements.txt (por ejemplo, djangorestframework para la API, channels para la funcionalidad en tiempo real).
 ## Instalación
-Clona este repositorio:
 
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/tu_usuario/list_market.git
    cd list_market
-Crea y activa un entorno virtual:
 
-bash
-Copiar código
-python3 -m venv env
-source env/bin/activate  # En Windows usa `env\Scripts\activate`
-Instala las dependencias:
+2. Crea y activa un entorno virtual:
+   ```bash
+   python3 -m venv env
+   source env/bin/activate  # En Windows usa `env\Scripts\activate`
+   
+3. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
 
-bash
-Copiar código
-pip install -r requirements.txt
-Realiza las migraciones de la base de datos:
+4. Realiza las migraciones de la base de datos:
+   ```bash
+   python manage.py migrate
 
-bash
-Copiar código
-python manage.py migrate
-Inicia el servidor:
-
-bash
-Copiar código
-python manage.py runserver
+5. Inicia el servidor:
+   ```bash
+   python manage.py runserver
 Uso
 Accede a http://127.0.0.1:8000 en tu navegador para ver la aplicación.
 Regístrate e inicia sesión.
