@@ -13,10 +13,10 @@ Otros paquetes según requirements.txt (por ejemplo, djangorestframework para la
 ## Instalación
 Clona este repositorio:
 
-```bash
-Copiar código
-git clone https://github.com/tu_usuario/list_market.git
-cd list_market
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/list_market.git
+   cd list_market
 Crea y activa un entorno virtual:
 
 bash
