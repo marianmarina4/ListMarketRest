@@ -35,21 +35,22 @@ Otros paquetes según requirements.txt (por ejemplo, djangorestframework para la
    python manage.py runserver
    
 ## Uso
-Accede a http://127.0.0.1:8000 en tu navegador para ver la aplicación.
-Regístrate e inicia sesión.
-Crea una lista de compras y comienza a agregar productos.
-Comparte la lista con otros usuarios para que puedan colaborar.
-Estructura del Proyecto
-/list_market: Contiene la configuración principal de Django.
-/shopping: Aplicación para la gestión de listas de compras.
-/products: Aplicación que maneja los productos y su información.
-db.sqlite3: Base de datos de desarrollo (SQLite) incluida para pruebas locales.
+1. Accede a http://127.0.0.1:8000 en tu navegador para ver la aplicación.
+2. Regístrate e inicia sesión.
+3. Crea una lista de compras y comienza a agregar productos.
+4. Comparte la lista con otros usuarios para que puedan colaborar.
+
+## Estructura del Proyecto
+* /list_market: Contiene la configuración principal de Django.
+* /shopping: Aplicación para la gestión de listas de compras.
+* /products: Aplicación que maneja los productos y su información.
+* db.sqlite3: Base de datos de desarrollo (SQLite) incluida para pruebas locales.
 
 ## Contribución
 Si deseas contribuir:
 
-Realiza un fork de este repositorio.
-Crea una rama para tu funcionalidad (git checkout -b feature/nueva-funcionalidad).
-Haz commit de tus cambios (git commit -m 'Agrega nueva funcionalidad').
-Realiza push a la rama (git push origin feature/nueva-funcionalidad).
-Abre un Pull Request.
+## Realiza un fork de este repositorio.
+1. Crea una rama para tu funcionalidad (git checkout -b feature/nueva-funcionalidad).
+2. Haz commit de tus cambios (git commit -m 'Agrega nueva funcionalidad').
+3. Realiza push a la rama (git push origin feature/nueva-funcionalidad).
+4. Abre un Pull Request.
