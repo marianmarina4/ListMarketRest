@@ -2,16 +2,11 @@ from rest_framework import serializers
 from ..models import Product
 
 class ProductSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = Product
-        exclude = ['state', 'created_date', 'modified_date', 'deleted_date']
+        fields = ['id', 'name', 'price', 'quantity']
 
-    def to_representation(self, instance):
-        return {
-            'id': instance.id,
-            'name': instance.name,
-            'quantity': instance.quantity,
-            'price': instance.price,
-        }
-
+    def validate_quantity(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("La cantidad debe ser mayor que cero.")
+        return value

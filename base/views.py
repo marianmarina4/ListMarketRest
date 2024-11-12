@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from rest_framework import permissions
-from products.models import Product
 
 # Create your views here.
 
 class IsOwnerOrSharedUser(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        if isinstance(obj, Product):
-            shopping_list = obj.shopping_list
-        else:
-            shopping_list = obj
-
-        # Permite acceso si el usuario es el propietario o está en la lista compartida
-        return shopping_list.user == request.user or request.user in shopping_list.shared_with.all()
+        # El propietario puede hacer cualquier cosa
+        if obj.user == request.user:
+            return True
+        # Los usuarios compartidos pueden ver y actualizar, pero no eliminar
+        if request.user in obj.shared_with.all():
+            return request.method in ['GET', 'PUT', 'PATCH']
+        return False
