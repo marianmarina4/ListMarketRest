@@ -33,7 +33,8 @@ Otros paquetes según requirements.txt (por ejemplo, djangorestframework para la
 5. Inicia el servidor:
    ```bash
    python manage.py runserver
-Uso
+   
+## Uso
 Accede a http://127.0.0.1:8000 en tu navegador para ver la aplicación.
 Regístrate e inicia sesión.
 Crea una lista de compras y comienza a agregar productos.
@@ -43,7 +44,8 @@ Estructura del Proyecto
 /shopping: Aplicación para la gestión de listas de compras.
 /products: Aplicación que maneja los productos y su información.
 db.sqlite3: Base de datos de desarrollo (SQLite) incluida para pruebas locales.
-Contribución
+
+## Contribución
 Si deseas contribuir:
 
 Realiza un fork de este repositorio.
