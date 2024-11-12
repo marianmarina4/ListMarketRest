@@ -1,19 +1,19 @@
-# Nombre del Proyecto
+# List Market
 List Market
 Una aplicación de lista de compras colaborativa que permite a los usuarios crear, editar y compartir sus listas de compras en tiempo real, con características adicionales de geolocalización para encontrar tiendas cercanas. Este proyecto está desarrollado en Django.
 
-Características
+## Características
 Crear y Editar Listas: Los usuarios pueden agregar o quitar elementos de sus listas de compras.
 Gestión de Usuarios: Registro e inicio de sesión para usuarios.
 
-Requisitos
+## Requisitos
 Python 3.x
 Django
 Otros paquetes según requirements.txt (por ejemplo, djangorestframework para la API, channels para la funcionalidad en tiempo real).
-Instalación
+## Instalación
 Clona este repositorio:
 
-bash
+```bash
 Copiar código
 git clone https://github.com/tu_usuario/list_market.git
 cd list_market
