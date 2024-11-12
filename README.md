@@ -43,12 +43,3 @@ Una aplicación de lista de compras colaborativa que permite a los usuarios crea
 * /list_market: Contiene la configuración principal de Django.
 * /shopping: Aplicación para la gestión de listas de compras.
 * /products: Aplicación que maneja los productos y su información.
-* db.sqlite3: Base de datos de desarrollo (SQLite) incluida para pruebas locales.
-
-### Contribución
-Si deseas contribuir:
-1. Realiza un fork de este repositorio.
-2. Crea una rama para tu funcionalidad (git checkout -b feature/nueva-funcionalidad).
-3. Haz commit de tus cambios (git commit -m 'Agrega nueva funcionalidad').
-4. Realiza push a la rama (git push origin feature/nueva-funcionalidad).
-5. Abre un Pull Request.
