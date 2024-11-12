@@ -1,3 +1,4 @@
+# Nombre del Proyecto
 List Market
 Una aplicación de lista de compras colaborativa que permite a los usuarios crear, editar y compartir sus listas de compras en tiempo real, con características adicionales de geolocalización para encontrar tiendas cercanas. Este proyecto está desarrollado en Django.
 
