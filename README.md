@@ -47,9 +47,8 @@ Una aplicación de lista de compras colaborativa que permite a los usuarios crea
 
 ### Contribución
 Si deseas contribuir:
-
-### Realiza un fork de este repositorio.
-1. Crea una rama para tu funcionalidad (git checkout -b feature/nueva-funcionalidad).
-2. Haz commit de tus cambios (git commit -m 'Agrega nueva funcionalidad').
-3. Realiza push a la rama (git push origin feature/nueva-funcionalidad).
-4. Abre un Pull Request.
+1. Realiza un fork de este repositorio.
+2. Crea una rama para tu funcionalidad (git checkout -b feature/nueva-funcionalidad).
+3. Haz commit de tus cambios (git commit -m 'Agrega nueva funcionalidad').
+4. Realiza push a la rama (git push origin feature/nueva-funcionalidad).
+5. Abre un Pull Request.
