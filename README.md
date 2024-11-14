@@ -1,5 +1,5 @@
 # List Market
-Una aplicación de lista de compras colaborativa que permite a los usuarios crear, editar y compartir sus listas de compras en tiempo real. Este proyecto está desarrollado en Django.
+Una API de lista de compras colaborativa que permite a los usuarios crear, editar y compartir sus listas de compras en tiempo real. Este proyecto está desarrollado en Django.
 
 ### Características
 * Crear y Editar Listas: Los usuarios pueden agregar o quitar elementos de sus listas de compras.
