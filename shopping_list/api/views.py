@@ -7,7 +7,8 @@ from base.views import IsOwnerOrSharedUser
 
 class ShoppingListCreateAPIView( generics.ListCreateAPIView):
     serializer_class = ShoppingSerializer
-
+    permission_classes = [IsOwnerOrSharedUser]
+    
     def perform_create(self, serializer):
         # Creamos la lista de compras y sus productos asociados
         serializer.save(user=self.request.user, state=True)
@@ -21,6 +22,7 @@ class ShoppingListCreateAPIView( generics.ListCreateAPIView):
         
 class ShoppingRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ShoppingSerializer
+    permission_classes = [IsOwnerOrSharedUser]
 
     def get_queryset(self):
         return Shopping.objects.filter(
@@ -37,6 +39,7 @@ class ShoppingRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView
         if shopping:
             shopping.state = False
             shopping.save()
-            return Response({'message':'Lista eliminada correctamente!'}, status= status.HTTP_200_OK)
+            return Response({'message': f'Lista "{shopping.name}" eliminada correctamente!',
+                             'id': shopping.id}, status= status.HTTP_200_OK)
         return Response({'error':'No existe una lista con estos datos!'}, status= status.HTTP_400_BAD_REQUEST)
     
