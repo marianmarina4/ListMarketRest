@@ -1,14 +1,12 @@
-from rest_framework import generics, permissions, status
+from rest_framework import generics, status
 from rest_framework.response import Response
 from django.db.models import Q
 from ..models import  Shopping
 from .serializers import ShoppingSerializer
 from base.views import IsOwnerOrSharedUser
-from users.authentication_mixins import Authentication
 
-class ShoppingListCreateAPIView(Authentication, generics.ListCreateAPIView):
+class ShoppingListCreateAPIView( generics.ListCreateAPIView):
     serializer_class = ShoppingSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
         # Creamos la lista de compras y sus productos asociados
@@ -23,7 +21,6 @@ class ShoppingListCreateAPIView(Authentication, generics.ListCreateAPIView):
         
 class ShoppingRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ShoppingSerializer
-    permission_classes = [IsOwnerOrSharedUser]
 
     def get_queryset(self):
         return Shopping.objects.filter(

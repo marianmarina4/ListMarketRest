@@ -2,9 +2,9 @@ from users.authentication import ExpiringTokenAuthentication
 from rest_framework.authentication import get_authorization_header
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
-from rest_framework import status
+from rest_framework import status, authentication, exceptions
 
-class Authentication(object):
+class Authentication(authentication.BaseAuthentication):
     user = None
     user_token_expired = False
     
@@ -31,29 +31,10 @@ class Authentication(object):
             return message
         return None
     
-    def dispatch(self, request, * args, **kwargs):
-        user = self.get_user(request)
-        # found token in request
-        if user is not None:
-            """
-        Possible value of variable user:
-            * User Instance
-            * Message 
-        """
-            if type(user) == str:
-                response = Response({'error': user,  'expired': self.user_token_expired}, status= status.HTTP_401_UNAUTHORIZED)
-                response.accepted_renderer = JSONRenderer()
-                response.accepted_media_type = 'application/json'
-                response.renderer_context = {}
-                return response
-            
-            # only user_token_expired = True, the request can be continue
-            if not self.user_token_expired:
-                return super().dispatch(request,* args, **kwargs)
-        
-        response = Response({'error': 'No se han enviado las credenciales.', 'expired': self.user_token_expired},status= status.HTTP_400_BAD_REQUEST)
-        response.accepted_renderer = JSONRenderer()
-        response.accepted_media_type = 'application/json'
-        response.renderer_context = {}
-        return response
     
+    def authenticate(self, request):
+        self.get_user(request)
+        if self.user is None:
+            raise exceptions.AuthenticationFailed('Credenciales incorrectas')
+        
+        return (self.user, None)

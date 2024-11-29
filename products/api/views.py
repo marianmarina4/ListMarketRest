@@ -1,8 +1,7 @@
-from rest_framework import generics, permissions, status
+from rest_framework import generics, status
 from rest_framework.response import Response
 from ..models import Product
 from .serializers import ProductSerializer
-from base.views import IsOwnerOrSharedUser
 
 class ProductListCreateAPIView(generics.ListCreateAPIView):
     """
@@ -11,7 +10,6 @@ class ProductListCreateAPIView(generics.ListCreateAPIView):
     .
     """
     serializer_class = ProductSerializer
-    permission_classes = [permissions.IsAuthenticated]  
     queryset = Product.objects.filter(state = True)
     
     def post(self, request, *args, **kwargs):
@@ -23,7 +21,6 @@ class ProductListCreateAPIView(generics.ListCreateAPIView):
     
 class ProductRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProductSerializer
-    permission_classes = [IsOwnerOrSharedUser]
 
     def get_queryset(self):
         return Product.objects.filter(
@@ -44,25 +41,3 @@ class ProductRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView)
             product.save()
             return Response({'message':'Producto eliminado correctamente!'}, status= status.HTTP_200_OK)
         return Response({'error':'No existe un producto con estos datos!'}, status= status.HTTP_400_BAD_REQUEST)
-    
-    def put(self, request, *args, **kwargs):
-        """
-        Actualización de un producto específico
-        
-        .
-        """
-        
-    def patch(self, request, *args, **kwargs):
-        """
-        Actualización parcial de un producto específico
-        
-        .
-        """
-    
-    def get(self, request, *args, **kwargs):
-        """
-        Muestra de un producto específico
-        
-        .
-        """
-    

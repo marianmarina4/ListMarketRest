@@ -34,6 +34,11 @@ class ShoppingSerializer(serializers.ModelSerializer):
 
         # Gestionar los productos (creación o actualización)
         products_data = validated_data.pop('products', [])
+        existing_product_ids = [product.get('id') for product in products_data if product.get('id')]
+
+        # Elimina productos no incluidos en la actualización
+        instance.products.exclude(id__in=existing_product_ids).delete()
+        
         for product_data in products_data:
             product_id = product_data.get('id', None)
             if product_id:
@@ -54,5 +59,10 @@ class ShoppingSerializer(serializers.ModelSerializer):
 
         instance.save()
         return instance
+    
+    def validate_shared_with(self, value):
+        if self.context['request'].user in value:
+            raise serializers.ValidationError("No puedes compartir la lista contigo mismo.")
+        return value
 
 

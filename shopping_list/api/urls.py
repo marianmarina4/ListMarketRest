@@ -2,5 +2,5 @@ from django.urls import path
 from .views import (ShoppingListCreateAPIView, ShoppingRetrieveUpdateDestroyAPIView)
 urlpatterns = [
     path('', ShoppingListCreateAPIView.as_view(), name='shopping_list'),
-    path('update/<int:pk>/', ShoppingRetrieveUpdateDestroyAPIView.as_view(), name='shopping_update')
+    path('<int:pk>/', ShoppingRetrieveUpdateDestroyAPIView.as_view(), name='shopping_update')
 ]
