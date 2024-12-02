@@ -112,9 +112,18 @@ Consulta la documentación completa en [http://127.0.0.1:8000/swagger/](http://1
 ¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
 
 1. Haz un fork del repositorio.
-2. Crea una rama para tu funcionalidad: ```bash git checkout -b feature/nueva-funcionalidad ```
-3. Realiza tus cambios y confirma los commits: ```bash git commit -m "Descripción del cambio" ```
-4. Envía tu rama al repositorio remoto: ```bash git push origin feature/nueva-funcionalidad ```
+2. Crea una rama para tu funcionalidad:
+   ```bash
+   git checkout -b feature/nueva-funcionalidad
+   ```
+3. Realiza tus cambios y confirma los commits:
+   ```bash
+   git commit -m "Descripción del cambio"
+   ```
+4. Envía tu rama al repositorio remoto:
+   ```bash
+   git push origin feature/nueva-funcionalidad
+   ```
 5. Abre un Pull Request explicando tus cambios.
 
 ## **Contacto** 📬
