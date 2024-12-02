@@ -42,101 +42,59 @@ Sigue estos pasos para configurar el proyecto localmente:
 ```bash
 git clone <URL_DE_TU_REPOSITORIO>
 cd list_market
-2. Crear un entorno virtual e instalar dependencias
-bash
-Copiar código
-python -m venv env
-source env/bin/activate    # En Windows: .\env\Scripts\activate
-pip install -r requirements.txt
-3. Configurar la base de datos
-Crea una base de datos en PostgreSQL y configura las credenciales en settings.py:
 
-python
-Copiar código
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '<NOMBRE_BD>',
-        'USER': '<USUARIO>',
-        'PASSWORD': '<CONTRASEÑA>',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-Aplica las migraciones:
 
-bash
-Copiar código
-python manage.py makemigrations
-python manage.py migrate
-4. Crear un superusuario
-bash
-Copiar código
-python manage.py createsuperuser
-5. Ejecutar el servidor
-bash
-Copiar código
-python manage.py runserver
-Accede a la aplicación en http://127.0.0.1:8000.
+## Uso de la API
 
-Uso de la API 📡
-Autenticación
+### Autenticación
+
 La API utiliza JWT para la autenticación. Primero, obtén un token enviando una solicitud POST a:
 
-plaintext
-Copiar código
-POST /api/token/
-Con el token recibido, inclúyelo en los encabezados de tus solicitudes como:
 
-plaintext
-Copiar código
-Authorization: Bearer <TOKEN>
-Endpoints principales
-Listas de compras:
-GET /shopping/ - Listar listas visibles.
-POST /shopping/ - Crear una lista.
-PUT /shopping/<id>/ - Actualizar una lista.
-DELETE /shopping/<id>/ - Eliminar una lista.
-Productos:
-GET /products/ - Listar productos.
-POST /products/ - Crear un producto.
-PUT /products/<id>/ - Actualizar un producto.
-DELETE /products/<id>/ - Eliminar un producto.
-Consulta la documentación completa en:
+### Endpoints principales
 
-http://127.0.0.1:8000/swagger/
-http://127.0.0.1:8000/redoc/
-(si está habilitada).
+#### Listas de compras:
 
-Pruebas ✅
+- **GET** `/shopping/` - Listar listas visibles.
+- **POST** `/shopping/` - Crear una lista.
+- **PUT** `/shopping/<id>/` - Actualizar una lista.
+- **DELETE** `/shopping/<id>/` - Eliminar una lista.
+
+#### Productos:
+
+- **GET** `/products/` - Listar productos.
+- **POST** `/products/` - Crear un producto.
+- **PUT** `/products/<id>/` - Actualizar un producto.
+- **DELETE** `/products/<id>/` - Eliminar un producto.
+
+Consulta la documentación completa en [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/swagger/) o [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc/) (si está habilitada).
+
+## Pruebas
+
 Para ejecutar las pruebas automatizadas:
 
-bash
-Copiar código
+```bash
 python manage.py test
-Contribución 🤝
+
+## Contribución
+
 ¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
 
-Haz un fork del repositorio.
-Crea una rama para tu funcionalidad:
-bash
-Copiar código
-git checkout -b feature/nueva-funcionalidad
-Realiza tus cambios y confirma los commits:
-bash
-Copiar código
-git commit -m "Descripción del cambio"
-Envía tu rama al repositorio remoto:
-bash
-Copiar código
-git push origin feature/nueva-funcionalidad
-Abre un Pull Request explicando tus cambios.
-Licencia 📄
+1. Haz un fork del repositorio.
+2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y confirma los commits (`git commit -m "Descripción del cambio"`).
+4. Envía tu rama al repositorio remoto (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request explicando tus cambios.
+
+## Licencia
+
 Este proyecto está bajo la licencia MIT.
 
-Contacto 📬
-Desarrollador: Mariano Marina
-Email: marianomarina@example.com
-LinkedIn: linkedin.com/in/marianomarina
+## Contacto
+
+Desarrollador: Mariano Marina  
+Email: marianomarina@example.com  
+LinkedIn: [linkedin.com/in/marianomarina](https://linkedin.com/in/marianomarina)  
 
 Si tienes alguna duda o sugerencia, no dudes en contactarme.
+
