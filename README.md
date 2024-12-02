@@ -1,3 +1,37 @@
+# ListMarketRest 🛒
+
+ListMarketRest es una API REST para gestionar listas de compras. Proporciona funcionalidades como la creación, edición, y compartición de listas entre usuarios registrados. Está diseñada para facilitar la organización de compras y la colaboración en tiempo real.
+
+---
+
+## Características ✨
+
+- Crear, actualizar y eliminar listas de compras.
+- Agregar productos a las listas.
+- Compartir listas de compras con otros usuarios.
+- Control de acceso basado en usuarios.
+- Documentación de la API generada automáticamente con Swagger.
+
+---
+
+## Tecnologías Utilizadas 🛠️
+
+- **Backend**: Django, Django REST Framework
+- **Base de datos**: SQLite (en desarrollo), compatible con PostgreSQL.
+- **Autenticación**: Token Authentication.
+- **Documentación de la API**: Swagger/OpenAPI.
+
+---
+
+## Instalación ⚙️
+
+Sigue estos pasos para configurar el proyecto localmente:
+
+1. Clona este repositorio:
+
+   ```bash
+   git clone https://github.com/tu_usuario/ListMarketRest.git
+   cd ListMarketRest
 # List Market
 Una API de lista de compras colaborativa que permite a los usuarios crear, editar y compartir sus listas de compras en tiempo real. Este proyecto está desarrollado en Django.
 
