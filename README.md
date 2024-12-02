@@ -13,7 +13,7 @@
 
 El proyecto está diseñado con **JWT** para la autenticación y permisos personalizados para gestionar el acceso según roles de usuario (propietario o usuario compartido).
 
-## Características principales ✨
+## **Características principales** ✨
 
 - **Autenticación y permisos:** Implementación de JWT para seguridad y control de accesos mediante permisos personalizados.
 - **Gestión de listas y productos:** Crear, actualizar, eliminar y compartir listas de compras con productos asociados.
@@ -23,7 +23,7 @@ El proyecto está diseñado con **JWT** para la autenticación y permisos person
 
 ---
 
-## Requisitos previos 🛠️
+## **Requisitos previos** 🛠️
 
 Asegúrate de tener instalados los siguientes programas:
 
@@ -33,7 +33,7 @@ Asegúrate de tener instalados los siguientes programas:
 
 ---
 
-## Instalación 🚀
+## **Instalación** 🚀
 
 Sigue estos pasos para configurar el proyecto localmente:
 
@@ -65,7 +65,7 @@ DATABASES = {
     }
 }
 ```
-### Aplica las migraciones:
+#### Aplica las migraciones:
 ```bash
 python manage.py makemigrations
 python manage.py migrate
@@ -82,14 +82,14 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## Uso de la API
+## **Uso de la API**
 
 ### Autenticación
 
 La API utiliza JWT para la autenticación. Primero, obtén un token enviando una solicitud POST a:
 
 
-### Endpoints principales
+### **Endpoints principales**
 
 #### Listas de compras:
 
@@ -107,14 +107,7 @@ La API utiliza JWT para la autenticación. Primero, obtén un token enviando una
 
 Consulta la documentación completa en [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/swagger/) o [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc/) (si está habilitada).
 
-## Pruebas
-
-Para ejecutar las pruebas automatizadas:
-
-```bash
-python manage.py test
-
-## Contribución
+## **Contribución**
 
 ¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
 
@@ -124,11 +117,7 @@ python manage.py test
 4. Envía tu rama al repositorio remoto (`git push origin feature/nueva-funcionalidad`).
 5. Abre un Pull Request explicando tus cambios.
 
-## Licencia
-
-Este proyecto está bajo la licencia MIT.
-
-## Contacto
+## **Contacto**
 
 Desarrollador: Mariano Marina  
 Email: marianomarina@example.com  
