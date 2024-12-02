@@ -1,79 +1,142 @@
-# ListMarketRest 🛒
+# List Market API 🛒
 
-ListMarketRest es una API REST para gestionar listas de compras. Proporciona funcionalidades como la creación, edición, y compartición de listas entre usuarios registrados. Está diseñada para facilitar la organización de compras y la colaboración en tiempo real.
+**Aplicación para la gestión de listas de compras compartidas**, diseñada para facilitar la colaboración en tiempo real entre usuarios.
+
+## Descripción 📋
+
+**List Market API** es una aplicación basada en Django REST Framework que permite a los usuarios:
+
+- Crear y administrar listas de compras.
+- Agregar, editar y eliminar productos en listas de compras.
+- Compartir listas con otros usuarios para colaborar.
+- Filtrar y buscar listas de compras por usuario o estado.
+
+El proyecto está diseñado con **JWT** para la autenticación y permisos personalizados para gestionar el acceso según roles de usuario (propietario o usuario compartido).
+
+## Características principales ✨
+
+- **Autenticación y permisos:** Implementación de JWT para seguridad y control de accesos mediante permisos personalizados.
+- **Gestión de listas y productos:** Crear, actualizar, eliminar y compartir listas de compras con productos asociados.
+- **API RESTful:** Diseño modular que sigue las mejores prácticas para APIs.
+- **Estado lógico de eliminación:** Las listas no se eliminan físicamente; su estado cambia a inactivo.
+- **Filtro por usuario:** Las listas visibles son aquellas creadas por el usuario o compartidas con él.
 
 ---
 
-## Características ✨
+## Requisitos previos 🛠️
 
-- Crear, actualizar y eliminar listas de compras.
-- Agregar productos a las listas.
-- Compartir listas de compras con otros usuarios.
-- Control de acceso basado en usuarios.
-- Documentación de la API generada automáticamente con Swagger.
+Asegúrate de tener instalados los siguientes programas:
 
----
-
-## Tecnologías Utilizadas 🛠️
-
-- **Backend**: Django, Django REST Framework
-- **Base de datos**: SQLite (en desarrollo), compatible con PostgreSQL.
-- **Autenticación**: Token Authentication.
-- **Documentación de la API**: Swagger/OpenAPI.
+- **Python 3.8 o superior**
+- **Pipenv** (opcional, para manejar dependencias)
+- **PostgreSQL** (u otro motor de base de datos compatible)
 
 ---
 
-## Instalación ⚙️
+## Instalación 🚀
 
 Sigue estos pasos para configurar el proyecto localmente:
 
-1. Clona este repositorio:
+### 1. Clonar el repositorio
 
-   ```bash
-   git clone https://github.com/tu_usuario/ListMarketRest.git
-   cd ListMarketRest
-# List Market
-Una API de lista de compras colaborativa que permite a los usuarios crear, editar y compartir sus listas de compras en tiempo real. Este proyecto está desarrollado en Django.
+```bash
+git clone <URL_DE_TU_REPOSITORIO>
+cd list_market
+2. Crear un entorno virtual e instalar dependencias
+bash
+Copiar código
+python -m venv env
+source env/bin/activate    # En Windows: .\env\Scripts\activate
+pip install -r requirements.txt
+3. Configurar la base de datos
+Crea una base de datos en PostgreSQL y configura las credenciales en settings.py:
 
-### Características
-* Crear y Editar Listas: Los usuarios pueden agregar o quitar elementos de sus listas de compras.
-* Gestión de Usuarios: Registro e inicio de sesión para usuarios.
+python
+Copiar código
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '<NOMBRE_BD>',
+        'USER': '<USUARIO>',
+        'PASSWORD': '<CONTRASEÑA>',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+Aplica las migraciones:
 
-### Requisitos
-* Python 3.x
-* Django
-* Otros paquetes según requirements.txt (por ejemplo, djangorestframework para la API, channels para la funcionalidad en tiempo real).
-### Instalación
+bash
+Copiar código
+python manage.py makemigrations
+python manage.py migrate
+4. Crear un superusuario
+bash
+Copiar código
+python manage.py createsuperuser
+5. Ejecutar el servidor
+bash
+Copiar código
+python manage.py runserver
+Accede a la aplicación en http://127.0.0.1:8000.
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/tu_usuario/list_market.git
-   cd list_market
+Uso de la API 📡
+Autenticación
+La API utiliza JWT para la autenticación. Primero, obtén un token enviando una solicitud POST a:
 
-2. Crea y activa un entorno virtual:
-   ```bash
-   python3 -m venv env
-   source env/bin/activate  # En Windows usa `env\Scripts\activate`
-   
-3. Instala las dependencias:
-   ```bash
-   pip install -r requirements.txt
+plaintext
+Copiar código
+POST /api/token/
+Con el token recibido, inclúyelo en los encabezados de tus solicitudes como:
 
-4. Realiza las migraciones de la base de datos:
-   ```bash
-   python manage.py migrate
+plaintext
+Copiar código
+Authorization: Bearer <TOKEN>
+Endpoints principales
+Listas de compras:
+GET /shopping/ - Listar listas visibles.
+POST /shopping/ - Crear una lista.
+PUT /shopping/<id>/ - Actualizar una lista.
+DELETE /shopping/<id>/ - Eliminar una lista.
+Productos:
+GET /products/ - Listar productos.
+POST /products/ - Crear un producto.
+PUT /products/<id>/ - Actualizar un producto.
+DELETE /products/<id>/ - Eliminar un producto.
+Consulta la documentación completa en:
 
-5. Inicia el servidor:
-   ```bash
-   python manage.py runserver
-   
-### Uso
-1. Accede a http://127.0.0.1:8000 en tu navegador para ver la aplicación.
-2. Regístrate e inicia sesión.
-3. Crea una lista de compras y comienza a agregar productos.
-4. Comparte la lista con otros usuarios para que puedan colaborar.
+http://127.0.0.1:8000/swagger/
+http://127.0.0.1:8000/redoc/
+(si está habilitada).
 
-### Estructura del Proyecto
-* /list_market: Contiene la configuración principal de Django.
-* /shopping: Aplicación para la gestión de listas de compras.
-* /products: Aplicación que maneja los productos y su información.
+Pruebas ✅
+Para ejecutar las pruebas automatizadas:
+
+bash
+Copiar código
+python manage.py test
+Contribución 🤝
+¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
+
+Haz un fork del repositorio.
+Crea una rama para tu funcionalidad:
+bash
+Copiar código
+git checkout -b feature/nueva-funcionalidad
+Realiza tus cambios y confirma los commits:
+bash
+Copiar código
+git commit -m "Descripción del cambio"
+Envía tu rama al repositorio remoto:
+bash
+Copiar código
+git push origin feature/nueva-funcionalidad
+Abre un Pull Request explicando tus cambios.
+Licencia 📄
+Este proyecto está bajo la licencia MIT.
+
+Contacto 📬
+Desarrollador: Mariano Marina
+Email: marianomarina@example.com
+LinkedIn: linkedin.com/in/marianomarina
+
+Si tienes alguna duda o sugerencia, no dudes en contactarme.
