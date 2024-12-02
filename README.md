@@ -42,7 +42,7 @@ Sigue estos pasos para configurar el proyecto localmente:
 ```bash
 git clone <URL_DE_TU_REPOSITORIO>
 cd list_market
-```bash
+```
 
 
 ## Uso de la API
