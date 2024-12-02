@@ -43,7 +43,44 @@ Sigue estos pasos para configurar el proyecto localmente:
 git clone <URL_DE_TU_REPOSITORIO>
 cd list_market
 ```
+### 2. Crear un entorno virtual e instalar dependencias
 
+```bash
+python -m venv env
+source env/bin/activate    # En Windows: .\env\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 3. Configurar la base de datos
+
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '<NOMBRE_BD>',
+        'USER': '<USUARIO>',
+        'PASSWORD': '<CONTRASEÑA>',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
+### Aplica las migraciones:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+### 4. Crear un superusuario
+
+```bash
+python manage.py createsuperuser
+```
+
+### 5. Ejecutar el servidor
+
+```bash
+python manage.py runserver
+```
 
 ## Uso de la API
 
