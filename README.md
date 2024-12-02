@@ -82,7 +82,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## **Uso de la API**
+## **Uso de la API** 📡
 
 ### Autenticación
 
@@ -107,17 +107,17 @@ La API utiliza JWT para la autenticación. Primero, obtén un token enviando una
 
 Consulta la documentación completa en [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/swagger/) o [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc/) (si está habilitada).
 
-## **Contribución**
+## **Contribución** 🤝
 
 ¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
 
 1. Haz un fork del repositorio.
-2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y confirma los commits (`git commit -m "Descripción del cambio"`).
-4. Envía tu rama al repositorio remoto (`git push origin feature/nueva-funcionalidad`).
+2. Crea una rama para tu funcionalidad: ```bash git checkout -b feature/nueva-funcionalidad ```
+3. Realiza tus cambios y confirma los commits: ```bash git commit -m "Descripción del cambio" ```
+4. Envía tu rama al repositorio remoto: ```bash git push origin feature/nueva-funcionalidad ```
 5. Abre un Pull Request explicando tus cambios.
 
-## **Contacto**
+## **Contacto** 📬
 
 Desarrollador: Mariano Marina  
 Email: marianomarina@example.com  
