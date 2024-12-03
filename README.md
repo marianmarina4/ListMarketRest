@@ -13,6 +13,8 @@
 
 El proyecto está diseñado con **JWT** para la autenticación y permisos personalizados para gestionar el acceso según roles de usuario (propietario o usuario compartido).
 
+---
+
 ## **Características principales** ✨
 
 - **Autenticación y permisos:** Implementación de JWT para seguridad y control de accesos mediante permisos personalizados.
@@ -81,6 +83,7 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
+---
 
 ## **Uso de la API** 📡
 
@@ -107,6 +110,8 @@ La API utiliza JWT para la autenticación. Primero, obtén un token enviando una
 
 Consulta la documentación completa en [http://127.0.0.1:8000/swagger/](http://127.0.0.1:8000/swagger/) o [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc/) (si está habilitada).
 
+---
+
 ## **Contribución** 🤝
 
 ¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
@@ -125,6 +130,8 @@ Consulta la documentación completa en [http://127.0.0.1:8000/swagger/](http://1
    git push origin feature/nueva-funcionalidad
    ```
 5. Abre un Pull Request explicando tus cambios.
+
+---
 
 ## **Contacto** 📬
 
