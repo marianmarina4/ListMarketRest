@@ -129,8 +129,8 @@ Consulta la documentación completa en [http://127.0.0.1:8000/swagger/](http://1
 ## **Contacto** 📬
 
 Desarrollador: Mariano Marina  
-Email: marianomarina@example.com  
-LinkedIn: [linkedin.com/in/marianomarina](https://linkedin.com/in/marianomarina)  
+Email: marianomarina04@hotmail.com  
+LinkedIn: [linkedin.com/in/marianmarina/](https://www.linkedin.com/in/marianmarina/)  
 
 Si tienes alguna duda o sugerencia, no dudes en contactarme.
 
